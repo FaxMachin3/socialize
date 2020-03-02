@@ -7,6 +7,7 @@ const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Post = require("../../models/Post");
 
 // @route  GET api/profile/me
 // @desc   Get current user's profile
@@ -169,9 +170,11 @@ router.get("/user/:user_id", async (req, res) => {
 
 router.delete("/", auth, async (req, res) => {
     try {
-        // @tode remove users posts
+        // remove users posts
+        await Post.deleteMany({ user: req.user.id });
         // remove profile
         await Profile.findOneAndRemove({ user: req.user.id });
+        // remove user
         await User.findOneAndRemove({ _id: req.user.id });
 
         res.json({ msg: "User removed" });
@@ -358,7 +361,7 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
         if (error.kind == "ObjectId") {
             return res.status(400).json({ msg: "Education not found" });
         }
-        res.status(500).send("Server.error");
+        res.status(500).send("Server error");
     }
 });
 

@@ -1,6 +1,6 @@
-@import "config";
-@import "utilities";
-@import "form";
+@import "./resources/config";
+@import "./resources/utilities";
+@import "./resources/form";
 
 * {
     box-sizing: border-box;
@@ -191,4 +191,4 @@ img {
     }
 }
 
-@import "mobile";
+@import "./resources/mobile";

@@ -15,19 +15,19 @@ const User = require("../../models/User");
 router.post(
     "/",
     [
-        check("name", "name is required")
+        check("name", "Name is required")
             .not()
             .isEmpty(),
-        check("email", "please include a valid email").isEmail(),
+        check("email", "Please include a valid email").isEmail(),
         check(
             "password",
-            "please enter a password with 6 or more characters"
+            "Please enter a password with 6 or more characters"
         ).isLength({ min: 6 })
     ],
     async (req, res) => {
         const error = validationResult(req);
         if (!error.isEmpty()) {
-            return res.status(400).json({ error: error.array() });
+            return res.status(400).json({ errors: error.array() });
         }
 
         const { name, email, password } = req.body;
@@ -40,7 +40,7 @@ router.post(
                 return res.status(400).json({
                     error: [
                         {
-                            msg: "user alreadly exists"
+                            msg: "User alreadly exists"
                         }
                     ]
                 });
@@ -89,7 +89,7 @@ router.post(
             );
         } catch (error) {
             console.error(error.message);
-            res.status(500).send("server error");
+            res.status(500).send("Server error");
         }
     }
 );

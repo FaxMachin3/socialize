@@ -30,6 +30,11 @@
     color: $primary-color;
 }
 
+.add-experience {
+    // changed
+    margin-right: 0.2rem;
+}
+
 .round-img {
     border-radius: 50%;
 }
@@ -110,7 +115,7 @@
 // Alerts
 .alert {
     padding: 0.8rem;
-    margin: 1rem;
+    margin: 1rem 0; // changed
     opacity: 0.9;
     background: $light-color;
     color: #333;
