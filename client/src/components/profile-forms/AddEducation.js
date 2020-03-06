@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addEducation } from "../../actions/profile";
@@ -36,8 +36,8 @@ const AddEducation = ({ addEducation, history }) => {
 
     return (
         <Fragment>
-            <h1 class="large text-primary">Add Your AddEducation</h1>
-            <p class="lead">
+            <h1 class="large text-primary my-1">Add Your AddEducation</h1>
+            <p class="lead my-1">
                 <i class="fas fa-code-branch"></i> Add any school or bootcamp
                 that your have attended
             </p>
@@ -122,9 +122,9 @@ const AddEducation = ({ addEducation, history }) => {
                     ></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary my-1" />
-                <a class="btn btn-light my-1" href="dashboard.html">
+                <Link class="btn btn-light my-1" to="/dashboard">
                     Go Back
-                </a>
+                </Link>
             </form>
         </Fragment>
     );

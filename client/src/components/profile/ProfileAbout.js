@@ -9,7 +9,7 @@ const ProfileAbout = ({
     }
 }) => {
     return (
-        <div className="profile-about bg-light p-2">
+        <div className="profile-about bg-light p-2 my-3">
             {bio && (
                 <Fragment>
                     <h2 className="text-primary">

@@ -42,8 +42,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign Up</h1>
-            <p className="lead">
+            <h1 className="large text-primary my-1">Sign Up</h1>
+            <p className="lead my-1">
                 <i className="fas fa-user"></i> Create Your Account
             </p>
             <form className="form" onSubmit={e => onSubmit(e)}>

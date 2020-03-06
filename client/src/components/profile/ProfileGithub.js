@@ -16,8 +16,8 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
                 <Spinner />
             ) : (
                 repos.map((repo, index) => (
-                    <div key={index} className="repo bg-white p-1 my-1">
-                        <div>
+                    <div key={index} className="repo bg-white p-1 my-3 box-shadow">
+                        <div className="align-vertically-center">
                             <h4>
                                 <a
                                     href={repo.html_url}

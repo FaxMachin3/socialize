@@ -37,6 +37,7 @@
 
 .round-img {
     border-radius: 50%;
+    padding: 1rem;
 }
 
 .line {
@@ -52,7 +53,7 @@
     }
     &-light {
         @include set-background($light-color);
-        border: #ccc 1px solid;
+        border: #ccc 1px dashed;
     }
     &-dark {
         @include set-background($dark-color);

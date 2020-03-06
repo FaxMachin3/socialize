@@ -13,7 +13,7 @@ const CommentItem = ({
     deleteComment
 }) => {
     return (
-        <div className="post bg-white p-1 my-1">
+        <div className="post bg-white p-1 my-1 box-shadow">
             <div>
                 <Link to={`/profile/${user}`}>
                     <img className="round-img" src={avatar} alt="" />
@@ -22,7 +22,7 @@ const CommentItem = ({
             </div>
             <div>
                 <p className="my-1">{text}</p>
-                <p className="post-date">
+                <p className="post-date my-1">
                     Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
                 </p>
                 {!auth.loading && user === auth.user._id && (
