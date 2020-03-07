@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
@@ -27,7 +27,7 @@ const PostItem = ({
             </p>
 
             {showActions && (
-                <Fragment>
+                <>
                     <button
                         onClick={e => addLike(_id)}
                         type="button"
@@ -62,7 +62,7 @@ const PostItem = ({
                             <i className="fas fa-times"></i>
                         </button>
                     )}
-                </Fragment>
+                </>
             )}
         </div>
     </div>

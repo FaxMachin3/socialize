@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -12,11 +12,11 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     }, [getProfiles]);
 
     return (
-        <Fragment>
+        <>
             {loading ? (
                 <Spinner />
             ) : (
-                <Fragment>
+                <>
                     <h1 className="large text-primary my-1">Developers</h1>
                     <p className="lead  my-1">
                         <i className="fab fa-connectdevelop"></i> Browse and
@@ -34,9 +34,9 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                             <h4>No profiles found...</h4>
                         )}
                     </div>
-                </Fragment>
+                </>
             )}
-        </Fragment>
+        </>
     );
 };
 

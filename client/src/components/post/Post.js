@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     return loading || post === null ? (
         <Spinner />
     ) : (
-        <Fragment>
+        <>
             <Link to="/posts" className="btn my-1">
                 Back To Posts
             </Link>
@@ -31,7 +31,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
                     />
                 ))}
             </div>
-        </Fragment>
+        </>
     );
 };
 

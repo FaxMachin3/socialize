@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -35,7 +35,7 @@ const AddEducation = ({ addEducation, history }) => {
     };
 
     return (
-        <Fragment>
+        <>
             <h1 class="large text-primary my-1">Add Your AddEducation</h1>
             <p class="lead my-1">
                 <i class="fas fa-code-branch"></i> Add any school or bootcamp
@@ -126,7 +126,7 @@ const AddEducation = ({ addEducation, history }) => {
                     Go Back
                 </Link>
             </form>
-        </Fragment>
+        </>
     );
 };
 

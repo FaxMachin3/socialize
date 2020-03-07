@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -22,11 +22,11 @@ const Profile = ({
     }, [getProfileByID, match.params.id]);
 
     return (
-        <Fragment>
+        <>
             {profile === null || loading ? (
                 <Spinner />
             ) : (
-                <Fragment>
+                <>
                     <Link to="/profiles" className="btn btn-light">
                         Back To Profiles
                     </Link>
@@ -44,14 +44,14 @@ const Profile = ({
                         <div className="profile-exp bg-white p-2 my-3 box-shadow">
                             <h2 className="text-primary">Experience</h2>
                             {profile.experience.length > 0 ? (
-                                <Fragment>
+                                <>
                                     {profile.experience.map(exp => (
                                         <ProfileExperience
                                             key={exp._id}
                                             experience={exp}
                                         />
                                     ))}
-                                </Fragment>
+                                </>
                             ) : (
                                 <h4>No experience credentials</h4>
                             )}
@@ -60,14 +60,14 @@ const Profile = ({
                         <div className="profile-edu bg-white p-2 my-3 box-shadow">
                             <h2 className="text-primary">Education</h2>
                             {profile.education.length > 0 ? (
-                                <Fragment>
+                                <>
                                     {profile.education.map(edu => (
                                         <ProfileEducation
                                             key={edu._id}
                                             education={edu}
                                         />
                                     ))}
-                                </Fragment>
+                                </>
                             ) : (
                                 <h4>No education credentials</h4>
                             )}
@@ -77,9 +77,9 @@ const Profile = ({
                             <ProfileGithub username={profile.githubusername} />
                         )}
                     </div>
-                </Fragment>
+                </>
             )}
-        </Fragment>
+        </>
     );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -47,7 +47,7 @@ const CreateProfile = ({ createProfile, history }) => {
     };
 
     return (
-        <Fragment>
+        <>
             <h1 className="large text-primary my-1">Create Your Profile</h1>
             <p className="lead my-1">
                 <i className="fas fa-user"></i> Let's get some information to
@@ -176,7 +176,7 @@ const CreateProfile = ({ createProfile, history }) => {
                 </div>
 
                 {displaySocialInputs && (
-                    <Fragment>
+                    <>
                         <div className="form-group social-input">
                             <i className="fab fa-twitter fa-2x"></i>
                             <input
@@ -231,7 +231,7 @@ const CreateProfile = ({ createProfile, history }) => {
                                 onChange={e => onChange(e)}
                             />
                         </div>
-                    </Fragment>
+                    </>
                 )}
 
                 <input type="submit" className="btn btn-primary my-1" />
@@ -239,7 +239,7 @@ const CreateProfile = ({ createProfile, history }) => {
                     Go Back
                 </Link>
             </form>
-        </Fragment>
+        </>
     );
 };
 
