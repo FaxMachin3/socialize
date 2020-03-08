@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 import PostItem from "../posts/PostItem";
 import Spinner from "../layout/Spinner";
 import CommentFrom from "./CommentFrom";
@@ -22,15 +24,21 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
             </Link>
             <PostItem post={post} showActions={false} />
             <CommentFrom postID={post._id} />
-            <div className="comments">
+            <TransitionGroup className="comments">
                 {post.comments.map(comment => (
-                    <CommentItem
+                    <CSSTransition
                         key={comment._id}
-                        comment={comment}
-                        postID={post._id}
-                    />
+                        timeout={300}
+                        classNames="item"
+                    >
+                        <CommentItem
+                            key={comment._id}
+                            comment={comment}
+                            postID={post._id}
+                        />
+                    </CSSTransition>
                 ))}
-            </div>
+            </TransitionGroup>
         </>
     );
 };

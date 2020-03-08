@@ -2,31 +2,34 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Moment from "react-moment";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { deleteEducation } from "../../actions/profile";
 
 const Education = ({ education, deleteEducation }) => {
     const educations = education.map(edu => (
-        <tr key={edu._id}>
-            <td>{edu.school}</td>
-            <td className="hide-sm">{edu.degree}</td>
-            <td>
-                <Moment format="YYYY/MM/DD">{edu.from}</Moment> -{" "}
-                {edu.to === null ? (
-                    " Now"
-                ) : (
-                    <Moment format="YYYY/MM/DD">{edu.to}</Moment>
-                )}
-            </td>
-            <td>
-                <button
-                    onClick={e => deleteEducation(edu._id)}
-                    className="btn btn-danger"
-                >
-                    Delete
-                </button>
-            </td>
-        </tr>
+        <CSSTransition key={edu._id} timeout={300} classNames="item">
+            <tr key={edu._id}>
+                <td>{edu.school}</td>
+                <td className="hide-sm">{edu.degree}</td>
+                <td>
+                    <Moment format="YYYY/MM/DD">{edu.from}</Moment> -{" "}
+                    {edu.to === null ? (
+                        " Now"
+                    ) : (
+                        <Moment format="YYYY/MM/DD">{edu.to}</Moment>
+                    )}
+                </td>
+                <td>
+                    <button
+                        onClick={e => deleteEducation(edu._id)}
+                        className="btn btn-danger"
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </CSSTransition>
     ));
 
     return (
@@ -41,7 +44,11 @@ const Education = ({ education, deleteEducation }) => {
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>{educations}</tbody>
+                <tbody>
+                    <TransitionGroup component={null}>
+                        {educations}
+                    </TransitionGroup>
+                </tbody>
             </table>
         </>
     );

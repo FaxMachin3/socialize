@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 import { getPosts } from "../../actions/post";
 import Spinner from "../layout/Spinner";
 import PostItem from "./PostItem";
@@ -21,11 +23,17 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
                 <i className="fas fa-user"></i> Welcome to the community
             </p>
             <PostForm />
-            <div className="posts">
+            <TransitionGroup className="posts">
                 {posts.map(post => (
-                    <PostItem key={post._id} post={post} />
+                    <CSSTransition
+                        key={post._id}
+                        timeout={300}
+                        classNames="item"
+                    >
+                        <PostItem key={post._id} post={post} />
+                    </CSSTransition>
                 ))}
-            </div>
+            </TransitionGroup>
         </>
     );
 };
