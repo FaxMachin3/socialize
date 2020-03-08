@@ -10,7 +10,7 @@ import PostForm from "./PostForm";
 const Posts = ({ getPosts, post: { posts, loading } }) => {
     useEffect(() => {
         getPosts();
-    }, [getPosts]);
+    }, []); // eslint-disable-line
 
     return loading ? (
         <Spinner />

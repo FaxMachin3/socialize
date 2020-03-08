@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 // routes
 import Routes from "./components/routing/Routes";
 
@@ -28,10 +30,27 @@ const App = () => {
         <Provider store={store}>
             <Router>
                 <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route component={Routes} />
-                </Switch>
+                <Route
+                    render={({ location }) => (
+                        <TransitionGroup component={null} className="page">
+                            <CSSTransition
+                                key={location.key}
+                                timeout={{
+                                    enter: 300,
+                                    exit: 0,
+                                    appear: 300
+                                }}
+                                classNames="fade"
+                                unmountOnExit
+                            >
+                                <Switch>
+                                    <Route exact path="/" component={Landing} />
+                                    <Route component={Routes} />
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
+                    )}
+                />
             </Router>
         </Provider>
     );

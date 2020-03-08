@@ -19,7 +19,7 @@ const Profile = ({
 }) => {
     useEffect(() => {
         getProfileByID(match.params.id);
-    }, [getProfileByID, match.params.id]);
+    }, []); // eslint-disable-line
 
     return (
         <>

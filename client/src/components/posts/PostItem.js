@@ -31,7 +31,7 @@ const PostItem = ({
                     <button
                         onClick={e => addLike(_id)}
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light my-1"
                     >
                         <i className="fas fa-thumbs-up"></i>{" "}
                         <span>
@@ -41,11 +41,14 @@ const PostItem = ({
                     <button
                         onClick={e => removeLike(_id)}
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light my-1"
                     >
                         <i className="fas fa-thumbs-down"></i>
                     </button>
-                    <Link to={`/posts/${_id}`} className="btn btn-primary">
+                    <Link
+                        to={`/posts/${_id}`}
+                        className="btn btn-primary  my-1"
+                    >
                         Discussion{" "}
                         {comments.length > 0 && (
                             <span className="comment-count">
@@ -57,7 +60,7 @@ const PostItem = ({
                         <button
                             onClick={e => deletePost(_id)}
                             type="button"
-                            className="btn btn-danger"
+                            className="btn btn-danger my-1"
                         >
                             <i className="fas fa-times"></i>
                         </button>

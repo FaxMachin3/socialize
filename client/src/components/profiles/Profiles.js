@@ -9,7 +9,7 @@ import { getProfiles } from "../../actions/profile";
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     useEffect(() => {
         getProfiles();
-    }, [getProfiles]);
+    }, []); // eslint-disable-line
 
     return (
         <>
@@ -42,7 +42,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
 
 Profiles.propTypes = {
     getProfiles: PropTypes.func.isRequired,
-    Profiles: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

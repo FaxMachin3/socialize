@@ -7,7 +7,7 @@ import Spinner from "../layout/Spinner";
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
     useEffect(() => {
         getGithubRepos(username);
-    }, [getGithubRepos, username]);
+    }, []); // eslint-disable-line
 
     return (
         <div className="profile-github">
@@ -16,7 +16,10 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
                 <Spinner />
             ) : (
                 repos.map((repo, index) => (
-                    <div key={index} className="repo bg-white p-1 my-3 box-shadow">
+                    <div
+                        key={index}
+                        className="repo bg-white p-1 my-3 box-shadow"
+                    >
                         <div className="align-vertically-center">
                             <h4>
                                 <a
