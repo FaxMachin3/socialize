@@ -49,7 +49,7 @@ const App = () => {
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>
-                    )}
+                    )}  
                 />
             </Router>
         </Provider>

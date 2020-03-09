@@ -16,10 +16,13 @@ const Dashboard = ({
     profile: { profile, loading }
 }) => {
     useEffect(() => {
-        getCurrentProfile();
+        // adding timeout because of react-transition-group's bugs
+        setTimeout(() => {
+            getCurrentProfile();
+        }, 100);
     }, []); // eslint-disable-line
 
-    return loading & (profile === null) ? (
+    return loading && profile === null ? (
         <Spinner />
     ) : (
         <>
