@@ -11,7 +11,11 @@ const Alert = ({ alerts }) => {
         alerts.length > 0 && (
             <TransitionGroup component={null}>
                 {alerts.map(alert => (
-                    <CSSTransition key={uuid()} timeout={300} classNames="item">
+                    <CSSTransition
+                        key={alert.id}
+                        timeout={300}
+                        classNames="item"
+                    >
                         <div
                             key={alert.id}
                             className={`alert alert-${alert.alertType}`}
