@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { v4 as uuid } from "uuid";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -10,11 +11,7 @@ const Alert = ({ alerts }) => {
         alerts.length > 0 && (
             <TransitionGroup component={null}>
                 {alerts.map(alert => (
-                    <CSSTransition
-                        key={alert._id}
-                        timeout={300}
-                        classNames="item"
-                    >
+                    <CSSTransition key={uuid()} timeout={300} classNames="item">
                         <div
                             key={alert.id}
                             className={`alert alert-${alert.alertType}`}
