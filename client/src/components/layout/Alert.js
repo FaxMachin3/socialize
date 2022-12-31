@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { v4 as uuid } from "uuid";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 

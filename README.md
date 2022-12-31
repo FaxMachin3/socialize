@@ -10,28 +10,27 @@ A social networking website for developers. Made with <3
     -   React.js (_hooks_)
 -   APIs:
     -   DOM API
-    -   Web Storage API 
+    -   Web Storage API
 -   Additional Libraries:
     -   Concurrently (runs client and server concurrently and looks for changes)
-    -   Nodemon (*runs server and looks for changes*)
-    -   bcryptjs (*to encrypt password*)
-    -   config (*for global variables*)
-    -   express (*web framwork*)
-    -   express-validator (*middleware validators for req and res*)
-    -   jsonwebtoken (*for JWT implementation*)
-    -   mongoose (*modeling for Node.js*)
-    -   request (*used for api request from the backend*)
-    -   axios (*an HTTP client*)
-    -   moment (*to formate date*)
-    -   node-sass (*run sass in the front-end*)
-    -   uuid (*generate random ids*)
-    -   redux (*state management*)
-    -   react-router-dom (*routing/ SPAs*)
-    -   redux-thunk (*middleware*)
-    -   react-transition-group (*transiton between components*)
-    -   gravatar (*for avatars*)
-
+    -   Nodemon (_runs server and looks for changes_)
+    -   bcryptjs (_to encrypt password_)
+    -   config (_for global variables_)
+    -   express (_web framwork_)
+    -   express-validator (_middleware validators for req and res_)
+    -   jsonwebtoken (_for JWT implementation_)
+    -   mongoose (_modeling for Node.js_)
+    -   request (_used for api request from the backend_)
+    -   axios (_an HTTP client_)
+    -   moment (_to formate date_)
+    -   node-sass (_run sass in the front-end_)
+    -   uuid (_generate random ids_)
+    -   redux (_state management_)
+    -   react-router-dom (_routing/ SPAs_)
+    -   redux-thunk (_middleware_)
+    -   react-transition-group (_transiton between components_)
+    -   gravatar (_for avatars_)
 
 ---
 
-> Exciting features ;): This application has custom routed 404 page, protected routes(using JWT) and components transtions (using Reast Transition Group).
+> Exciting features ;): This application has custom routed 404 page, protected routes(using JWT) and components transitions (using React Transition Group).
