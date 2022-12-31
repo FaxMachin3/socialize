@@ -4,8 +4,7 @@
     "description": "Social networking web-app",
     "main": "server.js",
     "engines": {
-        "npm": "6.11.3",
-        "node": "10.17.0"
+        "node": "12.16.1"
     },
     "scripts": {
         "start": "node server",
